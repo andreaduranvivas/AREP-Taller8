@@ -2,6 +2,9 @@
 
 ## Descripción
 
+- ./mvnw quarkus:dev  -> Ejecutar la app Quarkus
+
+
 El laboratorio es un prototipo de una aplicación de registro de logs distribuida y balanceada con Round Robin,
 utilizando Docker para facilitar la portabilidad y escalabilidad. Se exploran patrones arquitectónicos en AWS y su implementación
 en aplicaciones web, utilizando SparkJava para servicios REST y MongoDB para almacenamiento de datos.

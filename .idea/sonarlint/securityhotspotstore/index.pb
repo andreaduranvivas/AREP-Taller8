@@ -82,3 +82,15 @@ Q.idea/sonarlint/securityhotspotstore/a/5/a5cc2925ca8258af241be7e5b0381edf302663
 Q.idea/sonarlint/securityhotspotstore/2/8/289b44d5f967059afbd764da4e11de78ac5eebb7,a\c\acc0ff59bdfcde2d54ba19050e26fb40c8294435
 Å
 Q.idea/sonarlint/securityhotspotstore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482,0\c\0c4799549ebca80c86406fd218445fef27b61acc
+=
+.dockerignore,0\5\05a721ebe3ba0754116825ed1359ff1785f4bbac
+8
+mvnw.cmd,1\f\1f1763f358c257ea3515417352b82b0165647ad1
+4
+mvnw,5\d\5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
+G
+.mvn/wrapper/.gitignore,0\9\09831978cabecfc0aa078bbe7811fbcf5be4cf52
+X
+(.mvn/wrapper/MavenWrapperDownloader.java,6\1\61ba2d75f3f04e099148e7a84c6a909f2000ff04
+U
+%.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
