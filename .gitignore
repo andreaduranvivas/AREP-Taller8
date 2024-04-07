@@ -46,3 +46,5 @@ mvnw
 
 ### Docker ###
 .dockerignore
+/.mvn/
+/.idea/
