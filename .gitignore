@@ -4,7 +4,7 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -47,4 +47,3 @@ mvnw
 ### Docker ###
 .dockerignore
 /.mvn/
-/.idea/
