@@ -3,8 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <title>X</title>
+        <link rel="stylesheet" href="css/mainPage.css">
     </head>
     <body>
+        <div id="menu">
+            <div id="logo-container">
+                <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X">
+            </div>
+            <div>
+                <button id="home">Inicio</button>
+            </div>
+            <div id="log-out">
+                <button id="login-button" type="submit" onclick="location.href='https://xlogin.auth.us-east-1.amazoncognito.com/logout?client_id=4t926nlb1th8s4afb0dolcakoo&logout_uri=http%3A%2F%2Flocalhost%3A8080%2Findex.html'">Cerrar sesión</button>
+            </div>
+        </div>
+        <div id="stream-container">
+            <div id="new-post">
 
+            </div>
+            <div id="stream-list">
+
+            </div>
+        </div>
     </body>
 </html>

@@ -1,0 +1,39 @@
+body
+{
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 23% 75%;
+    height: 100vh;
+    margin: 0;
+}
+#logo{
+    filter: invert(1);
+    max-width: 2em;
+    margin: 0.5em;
+}
+#menu
+{
+    margin: 0.5em 1em 1em 2em;
+}
+button {
+    margin: 0.5em 0 0.5em 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #00acee;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 900;
+}
+#log-out
+{
+    bottom: 1em;
+}
+#stream-container{
+    height: 100%;
+    border-left: #4d4d4d 0.001cm solid;
+    border-right: #4d4d4d 0.001cm solid;
+    width: 70%;
+}
