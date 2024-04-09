@@ -8,7 +8,8 @@ import java.time.LocalDateTime;
 @Data
 public class Tweet {
 
-    private final String author, content;
+    private final String author;
+    private final String content;
     private LocalDateTime creationDate;
 
     public Tweet(String author, String content, LocalDateTime creationDate) {
