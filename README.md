@@ -22,8 +22,6 @@ Las siguientes instrucciones le permitirán obtener una copia del proyecto en fu
 - [Git](https://www.youtube.com/watch?v=4xqVv2lTo40/) - Control de versiones
 - [Maven](https://www.youtube.com/watch?v=1QfiyR_PWxU) - Gestor de dependencias
 - [Java 17](https://www.youtube.com/watch?v=BG2OSaxWX4E) - Lenguaje de programación
-- [Docker](https://www.youtube.com/watch?v=ZO4KWQfUBBc) - Motor de contenedores
-- [Docker Compose](https://www.youtube.com/watch?v=Qw9zlE3t8Ko) - Herramienta para definir y ejecutar aplicaciones Docker de múltiples contenedores
 
 ## Instalación
 
@@ -49,7 +47,7 @@ Y ejecutamos el siguiente comando para crear 5 contenedores. 3 de ellos serán i
 balanceador de carga que usa round robin.
 
 ```bash
-docker-compose up -d
+mvn quarkus:dev
 ```
 
 Para visualizar la aplicación, escogemos algún navegador e ingresamos la URL http://localhost:8080/ en la barra de direcciones. Allí encontraremos la página principal de la aplicación,

@@ -2,13 +2,12 @@ package edu.arep.model;
 
 import lombok.Data;
 
-
 @Data
 public class Tweet {
 
     private final String author;
     private final String content;
-    private final String creationDate;
+    private String creationDate;
 
     public Tweet(String author, String content, String creationDate) {
         this.author = author;

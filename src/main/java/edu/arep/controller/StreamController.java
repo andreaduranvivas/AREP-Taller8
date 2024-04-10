@@ -20,4 +20,5 @@ public class StreamController {
         System.out.println("returning last posts");
         return Response.ok(service.getLastPosts()).build();
     }
+
 }
