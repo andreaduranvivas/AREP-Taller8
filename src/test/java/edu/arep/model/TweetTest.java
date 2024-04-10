@@ -34,4 +34,16 @@ class TweetTest {
         String expectedToString = "Tweet(author=John Doe, content=Hello, world!, creationDate=" + now + ")";
         assertEquals(expectedToString, tweet.toString());
     }
+
+    @Test
+    void testTweetContentLengthValidation() {
+        LocalDateTime now = LocalDateTime.now();
+        String longContent = "This is a very long content that exceeds the 140 characters limit for a tweet. " +
+                "This is a very long content that exceeds the 140 characters limit for a tweet. " +
+                "This is a very long content that exceeds the 140 characters limit for a tweet.";
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Tweet("John Doe", longContent, now.toString());
+        });
+    }
 }
