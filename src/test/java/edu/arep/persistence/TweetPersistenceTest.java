@@ -20,8 +20,8 @@ class TweetPersistenceTest {
     @Test
     void testInsertTweet() {
         Document tweet = new Document("author", "TestAuthor")
-                .append("content", "TestContent")
-                .append("date", "2024-04-09");
+                .append("content", "TestContent:)")
+                .append("creationDate", "2024-04-09");
 
         tweetPersistence.insertTweet(tweet);
 
@@ -29,7 +29,7 @@ class TweetPersistenceTest {
 
         assertNotNull(insertedTweet, "El tweet insertado no debe ser nulo");
         assertEquals("TestAuthor", insertedTweet.getString("author"), "El autor del tweet insertado debe coincidir");
-        assertEquals("TestContent", insertedTweet.getString("content"), "El contenido del tweet insertado debe coincidir");
-        assertEquals("2024-04-09", insertedTweet.getString("date"), "La fecha del tweet insertado debe coincidir");
+        assertEquals("TestContent:)", insertedTweet.getString("content"), "El contenido del tweet insertado debe coincidir");
+        assertEquals("2024-04-09", insertedTweet.getString("creationDate"), "La fecha del tweet insertado debe coincidir");
     }
 }

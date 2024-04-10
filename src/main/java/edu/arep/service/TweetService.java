@@ -16,7 +16,7 @@ public class TweetService {
         Document doc = new Document();
         doc.put("author", tweet.getAuthor());
         doc.put("content", tweet.getContent());
-        doc.put("date", tweet.getCreationDate());
+        doc.put("creationDate", tweet.getCreationDate());
         persistence.insertTweet(doc);
 
         return tweet;

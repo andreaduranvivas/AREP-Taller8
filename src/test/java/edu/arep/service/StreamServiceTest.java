@@ -17,8 +17,8 @@ class StreamServiceTest {
     void testGetLastPosts() {
         StreamPersistence mockPersistence = Mockito.mock(StreamPersistence.class);
 
-        Document doc1 = new Document("author", "Author1").append("content", "Content1").append("date", "2024-04-09");
-        Document doc2 = new Document("author", "Author2").append("content", "Content2").append("date", "2024-04-08");
+        Document doc1 = new Document("author", "Author1").append("content", "Content1").append("creationDate", "2024-04-09");
+        Document doc2 = new Document("author", "Author2").append("content", "Content2").append("creationDate", "2024-04-08");
         List<Document> mockPosts = Arrays.asList(doc1, doc2);
         when(mockPersistence.getLastPosts()).thenReturn(mockPosts);
 
@@ -29,9 +29,9 @@ class StreamServiceTest {
         assertEquals(2, result.size());
         assertEquals("Author1", result.get(0).get("author"));
         assertEquals("Content1", result.get(0).get("content"));
-        assertEquals("2024-04-09", result.get(0).get("date"));
+        assertEquals("2024-04-09", result.get(0).get("creationDate"));
         assertEquals("Author2", result.get(1).get("author"));
         assertEquals("Content2", result.get(1).get("content"));
-        assertEquals("2024-04-08", result.get(1).get("date"));
+        assertEquals("2024-04-08", result.get(1).get("creationDate"));
     }
 }

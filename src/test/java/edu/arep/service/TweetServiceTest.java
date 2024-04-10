@@ -11,13 +11,13 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 
-public class TweetServiceTest {
+class TweetServiceTest {
 
     @Test
-    public void testAddTweet() {
+    void testAddTweet() {
         TweetPersistence mockPersistence = Mockito.mock(TweetPersistence.class);
         LocalDateTime now = LocalDateTime.now();
-        Tweet tweet = new Tweet("TestAuthor", "TestContent", now);
+        Tweet tweet = new Tweet("TestAuthor", "TestContent", now.toString());
         TweetService service = new TweetService();
         service.persistence = mockPersistence;
 
@@ -27,7 +27,7 @@ public class TweetServiceTest {
 
         Document expectedDoc = new Document("author", "TestAuthor")
                 .append("content", "TestContent")
-                .append("date", tweet.getCreationDate());
+                .append("creationDate", tweet.getCreationDate());
         verify(mockPersistence).insertTweet(expectedDoc);
     }
 }

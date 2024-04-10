@@ -18,7 +18,7 @@ public class StreamService {
             Document newDocument = new Document();
             newDocument.put("author", d.get("author"));
             newDocument.put("content", d.get("content"));
-            newDocument.put("date", d.get("date"));
+            newDocument.put("creationDate", d.get("creationDate"));
             return newDocument;
         }).toList();
     }
