@@ -5,9 +5,13 @@ import lombok.Data;
 @Data
 public class Tweet {
 
-    private final String author;
-    private final String content;
+    private String author;
+    private String content;
     private String creationDate;
+
+    public Tweet(){
+
+    }
 
     public Tweet(String author, String content, String creationDate) {
         if (content.length() > 140) {
