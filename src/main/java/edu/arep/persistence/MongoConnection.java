@@ -12,6 +12,7 @@ public class MongoConnection {
     MongoClient client;
 
     public MongoCollection<Document> getCollection(){
+
         return client.getDatabase("Taller8").getCollection("Tweets");
     }
 }
