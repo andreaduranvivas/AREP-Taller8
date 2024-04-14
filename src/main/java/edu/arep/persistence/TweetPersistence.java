@@ -1,17 +1,17 @@
 package edu.arep.persistence;
 
 import com.mongodb.client.MongoCollection;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
 import static com.mongodb.client.model.Filters.eq;
 
-@ApplicationScoped
 public class TweetPersistence {
-    @Inject
-    MongoConnection client;
+    private MongoConnection client;
+
+    public TweetPersistence(MongoConnection client) {
+        this.client = client;
+    }
 
     public void insertTweet(Document doc){
         client.getCollection().insertOne(doc);

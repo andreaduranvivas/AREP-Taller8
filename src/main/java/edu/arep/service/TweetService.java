@@ -2,15 +2,15 @@ package edu.arep.service;
 
 import edu.arep.model.Tweet;
 import edu.arep.persistence.TweetPersistence;
-
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 import org.bson.Document;
 
-@ApplicationScoped
+
 public class TweetService {
-    @Inject
-    TweetPersistence persistence;
+    private TweetPersistence persistence;
+
+    public TweetService(TweetPersistence persistence) {
+        this.persistence = persistence;
+    }
 
     public Tweet addTweet(Tweet tweet){
         Document doc = new Document();

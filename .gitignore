@@ -48,3 +48,4 @@ mvnw
 .dockerignore
 /.mvn/
 /node_modules/
+/dependency-reduced-pom.xml
