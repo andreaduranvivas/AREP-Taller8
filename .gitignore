@@ -47,3 +47,7 @@ mvnw
 ### Docker ###
 .dockerignore
 /.mvn/
+node_modules
+/.node_modules/
+package-lock.json
+dependency-reduced-pom.xml
