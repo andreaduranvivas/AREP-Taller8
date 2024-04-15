@@ -162,7 +162,7 @@ y luego un `mvn clean package`
 
 En el siguiente video se muestra el despliegue de la aplicación en AWS, junto con una demostración de su funcionamiento.
 
-[![multimedia/login.png](multimedia/login.png)](https://youtu.be/1QfiyR_PWxU)
+[![multimedia/login.png](multimedia/login.png)](https://youtu.be/lVfHdSIa3IA)
 
 ## Autores
 
