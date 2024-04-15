@@ -33,10 +33,10 @@ cd AREP-Taller8
 ```
 
 
-## Ejecutando la aplicación
+## Ejecutando la aplicación localmente
 
 
-Para ejecutar la aplicación, primero debemos compilar el proyecto con el siguiente comando `mvn clean package`
+Para ejecutar la aplicación, primero debemos compilar y empaquetar el proyecto con el siguiente comando `mvn clean package`
 . Esto nos permitirá limpiar las construcciones previas de otras versiones y luego compilará el proyecto.
 
 Y ejecutamos el siguiente comando para correr el repositorio con quarkus
@@ -47,21 +47,22 @@ mvn quarkus:dev
 
 Para visualizar la aplicación, escogemos algún navegador e ingresamos la URL http://localhost:8080/ en la barra de direcciones. Allí encontraremos la primera página de la aplicación,
 la cual se basa en un formulario para iniciar sesión o registrarse. Una vez se inicie la sesión, hallaremos un formulario donde se podrían subir y ver los últimos tweets,
-los cuales estarán alamacenados en la base de datos.
+los cuales estarán almacenados en la base de datos.
 
-![image](multimedia/principal.png)
+![image](multimedia/login.png)
 
-A continuación se presenta un video demostrando el funcionamiento de la aplicación, haciendo uso de S3 en AWS.
+En la sección de *despliegue* se presenta un video demostrando el funcionamiento de la aplicación, haciendo uso de S3 en AWS.
 Para ello usamos AWS Cognito, dos servicios lambda, y un API gateway
-
-[![Video Prototipo](multimedia/Arquitectura%20de%20Logs%20con%20EC2%20de%20AWS.mp4)](https://youtu.be/AINZ3AHpHRU)
-
 
 ## Pruebas
 
 Las pruebas realizadas abarcan distintos aspectos de la funcionalidad de una aplicación que maneja tweets, incluyendo la creación de tweets, la persistencia de datos en una base de datos MongoDB, 
-y la lógica de negocio relacionada con la gestión de tweets. Las pruebas se pueden correr con el comando `mvn test`
- pruebas:
+y la lógica de negocio relacionada con la gestión de tweets. Las pruebas unitarias se pueden correr con el comando `mvn test`
+ y las pruebas de integración se podrán ver en el video en la sección de *despliegue*.:
+
+Deberías ver algo como esto:
+
+![image](multimedia/test.png)
 
 ### Pruebas Unitarias de la Clase `Tweet`
 
@@ -92,20 +93,20 @@ permitiendo probar la lógica de negocio sin depender de una base de datos real.
 
 ### Pruebas del Servicio de Tweets
 
-Estas pruebas se centran en la lógica de negocio relacionada con la gestión de tweets, incluyendo la adición de nuevos tweets. A
-l igual que las pruebas del servicio de stream, utilizan mocks para simular la persistencia de datos. Verifican que un tweet se pueda agregar 
+Estas pruebas se centran en la lógica de negocio relacionada con la gestión de tweets, incluyendo la adición de nuevos tweets. 
+Al igual que las pruebas del servicio de stream, utilizan mocks para simular la persistencia de datos. Verifican que un tweet se pueda agregar 
 correctamente y que la persistencia de datos se llame con los parámetros esperados.
 
 
 ## Documentación
 
-Para visualizar la documentación del proyecto solo debes correr el siguiente comando desde el directorio raiz del proyecto
+Para visualizar la documentación del proyecto solo debes correr el siguiente comando desde el directorio raíz del proyecto
 
 ```bash
 mvn javadoc:javadoc
 ```
 
-Y en la siguiente ruta encontrarás el archivo index.html en donde si lo abres desde el navegador podras ver toda la documentación
+Y en la siguiente ruta encontrarás el archivo index.html en donde si lo abres desde el navegador podrás ver toda la documentación
 
 ```
 ./target/site/apidocs
@@ -128,6 +129,41 @@ La arquitectura del prototipo consta de los siguientes componentes:
 A continuación se ve el diagrama de la arquitectura.
 
 ![image](multimedia/arquitectura.png)
+
+## Despliegue
+
+Para desplegar la aplicación en AWS, se deben seguir los siguientes pasos:
+
+1. Crear un bucket en S3 para alojar los archivos del FrontEnd de la aplicación.
+    ![S3](multimedia/S3.png)
+
+
+2. Crear un grupo de usuarios en AWS Cognito. Crear un pool de identidades en AWS Cognito.
+    ![image](multimedia/Cognito.png)
+
+
+3. Crear una política de IAM para el pool de identidades.
+   ![image](multimedia/IAM.png)
+
+
+4. Crear 2 funciones lambda para los servicios de Stream y Tweets. Debido a ciertas dependencias incompatibles entre quarkus y AWS, creamos otra rama
+llamada 'dev' en la que se encuentra el código de las funciones lambda. Así que el jar necesario para crearlas, se crea al haber hecho un `git checkout dev` 
+y luego un `mvn clean package`
+
+    ![image](multimedia/lambdaTweet.png)
+   ![image](multimedia/lambdaStream.png)
+
+
+5. Crear un API Gateway para exponer las funciones lambda.
+   ![image](multimedia/API.png)
+
+
+6. Exponer el API Gateway en internet.
+   ![image](multimedia/Etapa.png)
+
+En el siguiente video se muestra el despliegue de la aplicación en AWS, junto con una demostración de su funcionamiento.
+
+[![multimedia/login.png](multimedia/login.png)](https://youtu.be/1QfiyR_PWxU)
 
 ## Autores
 
