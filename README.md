@@ -127,8 +127,7 @@ La arquitectura del prototipo consta de los siguientes componentes:
 - **MongoDB:** Es la base de datos donde almacenaremos los tweets.
 
 A continuación se ve el diagrama de la arquitectura.
-
-![image](multimedia/arquitectura.png)
+![image](multimedia/arquitectura2.png)
 
 ## Despliegue
 
